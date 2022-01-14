@@ -37,7 +37,8 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
+    "build": "dotenv -e .env craco build",
+    "build:prod": "dotenv -e .env.prod carco build",
     "test": "craco test",
     "eject": "react-scripts eject"
   },

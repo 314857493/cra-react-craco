@@ -5,7 +5,7 @@ import Layout from "@/Layout";
 import Sider from "@/page/Main/Sider";
 import type { route } from "./index";
 
-function MainRoute() {
+const MainRoute = () => {
   const match = useRouteMatch();
   const filteRoute = (route: route) => {
     if (route.children) {
@@ -19,7 +19,7 @@ function MainRoute() {
               document.title = c_route.title;
               return <c_route.component {...props} />;
             }}
-           />
+          />
         );
       });
     }
@@ -32,7 +32,7 @@ function MainRoute() {
           document.title = route.title;
           return <route.component {...props} />;
         }}
-       />
+      />
     );
   };
   return (

@@ -11,7 +11,7 @@ interface CatsModalProps {
   rowData: CatSchema;
 }
 
-function ModalEdit({ show, handleShow, onSubmit, rowData }: CatsModalProps) {
+const ModalEdit = ({ show, handleShow, onSubmit, rowData }: CatsModalProps) => {
   const [form] = Form.useForm();
   const handleOk = () => {
     onSubmit({ ...form.getFieldsValue(), id: rowData.id });

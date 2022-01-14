@@ -5,7 +5,7 @@ import _axios from "@/utils/axios";
 import dayjs from "dayjs";
 import { useStore } from "react-redux";
 
-function Index() {
+const Index = () => {
   const nowTime = dayjs(new Date()).format("YYYY/MM/DD HH:mm:ss");
   const store = useStore();
   const history = useHistory();

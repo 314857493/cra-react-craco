@@ -19,7 +19,7 @@ export interface CatSchema {
   age: string | number;
 }
 
-function Cats() {
+const Cats = () => {
   const [modalShow, setModalShow] = useState(false);
   const [loading, setLoading] = useState(false);
   const [catName, setCatName] = useState("");

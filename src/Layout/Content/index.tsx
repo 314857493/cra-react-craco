@@ -5,7 +5,7 @@ interface ContentProps {
   children: any;
 }
 
-function Index({ children }: ContentProps) {
+const Index = ({ children }: ContentProps) => {
   return <div className={styles.main}>{children}</div>;
 }
 

@@ -18,14 +18,14 @@ interface SearchItemProps {
   style?: object;
 }
 
-function Search({
+const Search = ({
   onSearch,
   onClear,
   children,
   createBtnTitle,
   createBtnFunc,
   style,
-}: SearchProps) {
+}: SearchProps) => {
   const [searchForm] = Form.useForm();
   const clear = () => {
     onClear();
@@ -62,7 +62,7 @@ function Search({
   );
 }
 
-Search.Item = function ({ name, label, children, br, style }: SearchItemProps) {
+Search.Item = ({ name, label, children, br, style }: SearchItemProps) => {
   return (
     <>
       {br && <br />}

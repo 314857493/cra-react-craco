@@ -12,7 +12,7 @@ import type { RootState } from "@/store";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import _axios from "@/utils/axios";
 
-function TestPage() {
+const TestPage = () => {
   const history = useHistory();
   const count = useSelector((state: RootState) => state.counter.value);
   const dispatch = useDispatch();
@@ -52,7 +52,7 @@ function TestPage() {
       <Input
         placeholder="输入数字以改变count，输入1为+1，输入-1为-1"
         onChange={input2Increase}
-       />
+      />
       <div>{doubleCount}</div>
       <Button onClick={goBack}>返回</Button>
     </>

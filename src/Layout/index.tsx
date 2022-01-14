@@ -8,7 +8,7 @@ interface LayoutProps {
   children: any;
 }
 
-function Index({ children }: LayoutProps) {
+const Index = ({ children }: LayoutProps) => {
   return (
     <div className={styles.layout}>
       <Header />

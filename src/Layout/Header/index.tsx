@@ -10,7 +10,7 @@ import { setUserInfo } from "@/store/slice/userSlice";
 import type { RootState } from "@/store";
 import { useLocation, useHistory } from "react-router-dom";
 
-function Header() {
+const Header = () => {
   const location = useLocation();
   const history = useHistory();
   const dispatch = useDispatch();
@@ -53,7 +53,7 @@ function Header() {
           history.push("/");
         }}
       >
-        AI管理平台
+        这里是TITLE
       </span>
       <Dropdown overlay={menu}>
         <span className={styles.user}>{userName}</span>
