@@ -36,7 +36,7 @@ module.exports = {
   },
   webpack: {
     alias: {
-      "@": path.resolve(__dirname, "src"),
+      "@": path.resolve(__dirname, "./src"),
     },
     configure: (webpackConfig, { env, paths }) => {
       const customConfig = {
