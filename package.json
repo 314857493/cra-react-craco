@@ -2,6 +2,15 @@
   "name": "cra-react-carco",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "craco start",
+    "build": "dotenv -e .env craco build",
+    "build:prod": "dotenv -e .env.prod carco build",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "lint": "eslint . --ext .js,.ts,.jsx,tsx --ignore-path .gitignore",
+    "prepare": "husky install"
+  },
   "dependencies": {
     "@craco/craco": "^6.4.3",
     "@reduxjs/toolkit": "^1.7.1",
@@ -33,14 +42,8 @@
     "@types/react-router-dom": "^5.3.2",
     "@umijs/fabric": "^2.10.0",
     "@vitejs/plugin-react": "^1.1.4",
+    "husky": "^7.0.4",
     "typescript": "^4.4.4"
-  },
-  "scripts": {
-    "start": "craco start",
-    "build": "dotenv -e .env craco build",
-    "build:prod": "dotenv -e .env.prod carco build",
-    "test": "craco test",
-    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
