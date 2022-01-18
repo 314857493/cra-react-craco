@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "analyze": "REACT_APP_INTERACTIVE_ANALYZE=1 yarn build",
     "start": "craco start",
-    "build": "dotenv -e .env craco build",
-    "build:prod": "dotenv -e .env.prod carco build",
+    "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .js,.ts,.jsx,tsx --ignore-path .gitignore",
@@ -43,7 +43,8 @@
     "@umijs/fabric": "^2.10.0",
     "@vitejs/plugin-react": "^1.1.4",
     "husky": "^7.0.4",
-    "typescript": "^4.4.4"
+    "typescript": "^4.4.4",
+    "webpack-bundle-analyzer": "^4.5.0"
   },
   "eslintConfig": {
     "extends": [
