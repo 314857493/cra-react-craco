@@ -2,6 +2,7 @@ const CracoLessPlugin = require("craco-less");
 const path = require("path");
 const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const merge = require("webpack-merge");
 const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
@@ -46,11 +47,7 @@ module.exports = {
         ? "server"
         : "json";
 
-      const customConfig = {
-        plugins: [
-          ...webpackConfig.plugins,
-          new BundleAnalyzerPlugin({ analyzerMode }),
-        ],
+      const assignConfig = {
         optimization: {
           minimize: true,
           minimizer: [
@@ -72,9 +69,14 @@ module.exports = {
           ],
         },
       };
-      return process.env.NODE_ENV === "production"
-        ? Object.assign(webpackConfig, customConfig)
-        : webpackConfig;
+      const mergeConfig = {
+        plugins: [new BundleAnalyzerPlugin({ analyzerMode })],
+      };
+      const config = merge(
+        Object.assign(webpackConfig, assignConfig),
+        mergeConfig
+      );
+      return process.env.NODE_ENV === "production" ? config : webpackConfig;
     },
   },
 };
