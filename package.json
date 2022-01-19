@@ -1,7 +1,6 @@
 {
   "name": "cra-react-carco",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "analyze": "REACT_APP_INTERACTIVE_ANALYZE=1 yarn build",
     "start": "craco start",
