@@ -1,4 +1,4 @@
-# 使用 create-react-app 及 cra 搭建的 react 模板
+# 使用 create-react-app 及 craco 搭建的 react 模板
 
 ## 使用 eslint 进行格式校验
 
@@ -8,9 +8,9 @@
 
 使用 husky 对提交内容进行校验
 
-## 使用 cra 对 webpack 配置进行修改
+## 使用 craco 对 webpack 配置进行修改
 
-可以使用 cra 来配置 webpack 相关内容，不需要使用 eject 对配置内容进行弹出
+可以使用 craco 来配置 webpack 相关内容，不需要使用 eject 对配置内容进行弹出
 
 ## 使用技术栈
 
