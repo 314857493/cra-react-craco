@@ -73,7 +73,7 @@ module.exports = {
         plugins: [new BundleAnalyzerPlugin({ analyzerMode })],
       };
       const config = merge(
-        Object.assign(webpackConfig, assignConfig),
+        Object.assign({ ...webpackConfig }, assignConfig),
         mergeConfig
       );
       return process.env.NODE_ENV === "production" ? config : webpackConfig;
