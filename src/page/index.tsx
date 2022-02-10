@@ -45,6 +45,6 @@ const Index = () => {
       <button onClick={goTest}>去测试页</button>
     </>
   );
-}
+};
 
 export default Index;

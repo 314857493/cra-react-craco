@@ -1,22 +1,22 @@
 import Index from "@/page/index";
 import Cats from "@/page/Main/Cats";
 import TestPage from "@/page/TestPage";
-import type { route } from "./index";
+import type { MyRoute } from "./index";
 
-const routes: route[] = [
+const routes: MyRoute[] = [
   {
     path: "overview",
-    component: Index,
+    Component: Index,
     title: "概览",
     name: "index",
     requireAuth: false,
   },
   {
     path: "TestPage",
+    Component: TestPage,
     title: "测试页",
     name: "testPage",
     requireAuth: false,
-    component: TestPage,
   },
   {
     path: "cats",
@@ -25,7 +25,7 @@ const routes: route[] = [
     children: [
       {
         path: "cats/catsList",
-        component: Cats,
+        Component: Cats,
         title: "猫猫列表",
         name: "cats.catsList",
       },

@@ -17,6 +17,6 @@ const Index = ({ children }: LayoutProps) => {
       </div>
     </div>
   );
-}
+};
 
 export default Index;

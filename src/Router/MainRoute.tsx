@@ -3,25 +3,15 @@ import { Route, Switch, useRouteMatch } from "react-router-dom";
 import routes from "./mainRoutes";
 import Layout from "@/Layout";
 import Sider from "@/page/Main/Sider";
-import type { route } from "./index";
+import type { MyRoute } from "./index";
+import Main from "@/page";
 
 const MainRoute = () => {
   const match = useRouteMatch();
-  const filteRoute = (route: route) => {
+  const filteRoute = (route: MyRoute): JSX.Element | JSX.Element[] => {
+    const { Component } = route;
     if (route.children) {
-      return route.children.map((c_route: route) => {
-        return (
-          <Route
-            key={c_route.path}
-            path={`${match.path}/${c_route.path}`}
-            exact
-            render={(props) => {
-              document.title = c_route.title;
-              return <c_route.component {...props} />;
-            }}
-          />
-        );
-      });
+      return route.children.map(filteRoute) as JSX.Element[];
     }
     return (
       <Route
@@ -30,7 +20,8 @@ const MainRoute = () => {
         exact
         render={(props) => {
           document.title = route.title;
-          return <route.component {...props} />;
+          // @ts-ignore
+          return <Component {...props} />;
         }}
       />
     );
@@ -39,10 +30,18 @@ const MainRoute = () => {
     <Layout>
       <Sider />
       <div style={{ flex: 1 }}>
-        <Switch>{routes.map((item: route): any => filteRoute(item))}</Switch>
+        <Switch>
+          {routes.map(filteRoute)}
+          <Route
+            key="123321"
+            path="/main/overview"
+            exact
+            render={() => <Main />}
+          />
+        </Switch>
       </div>
     </Layout>
   );
-}
+};
 
 export default MainRoute;

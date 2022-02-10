@@ -4,7 +4,7 @@ import styles from "./index.module.less";
 import { Menu } from "antd";
 import routes from "@/Router/mainRoutes";
 import { useSelector } from "react-redux";
-import type { route } from "@/Router";
+import type { MyRoute } from "@/Router";
 import type { RootState } from "@/store";
 
 const Sider = () => {
@@ -25,7 +25,7 @@ const Sider = () => {
     }
     setOpenKeys(_openKeys);
   };
-  const filteMenu = (menu: route) => {
+  const filteMenu = (menu: MyRoute) => {
     if (menu.children) {
       return (
         <Menu.SubMenu
@@ -75,6 +75,6 @@ const Sider = () => {
       </Menu>
     </div>
   );
-}
+};
 
 export default Sider;

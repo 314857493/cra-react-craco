@@ -23,7 +23,7 @@ export const userSlice = createSlice({
       state.userId = userId;
       switch (userRole) {
         case 0:
-          state.authority = ["cats", "cats.catsList", "testPage"];
+          state.authority = ["cats", "cats.catsList", "testPage", "testPage11"];
           break;
         case 1:
           state.authority = [];

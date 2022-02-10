@@ -7,6 +7,6 @@ interface ContentProps {
 
 const Index = ({ children }: ContentProps) => {
   return <div className={styles.main}>{children}</div>;
-}
+};
 
 export default Index;

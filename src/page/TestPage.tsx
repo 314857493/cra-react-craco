@@ -57,6 +57,6 @@ const TestPage = () => {
       <Button onClick={goBack}>返回</Button>
     </>
   );
-}
+};
 
 export default TestPage;

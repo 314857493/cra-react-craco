@@ -47,6 +47,6 @@ const ModalEdit = ({ show, handleShow, onSubmit, rowData }: CatsModalProps) => {
       </Modal>
     </>
   );
-}
+};
 
 export default ModalEdit;
