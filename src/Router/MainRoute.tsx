@@ -4,7 +4,6 @@ import routes from "./mainRoutes";
 import Layout from "@/Layout";
 import Sider from "@/page/Main/Sider";
 import type { MyRoute } from "./index";
-import Main from "@/page";
 
 const MainRoute = () => {
   const match = useRouteMatch();
@@ -30,15 +29,7 @@ const MainRoute = () => {
     <Layout>
       <Sider />
       <div style={{ flex: 1 }}>
-        <Switch>
-          {routes.map(filteRoute)}
-          <Route
-            key="123321"
-            path="/main/overview"
-            exact
-            render={() => <Main />}
-          />
-        </Switch>
+        <Switch>{routes.map(filteRoute)}</Switch>
       </div>
     </Layout>
   );
