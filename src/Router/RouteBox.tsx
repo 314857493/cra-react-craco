@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Login from "@/page/Login";
 import Home from "@/page/Home";
 import NoMatch from "@/page/NoMatch";
-const MainRoute = lazy(() => import('./MainRoute'))
+const MainRoute = lazy(() => import("./MainRoute"));
 
 const RouteBox = () => {
   return (
@@ -38,6 +38,6 @@ const RouteBox = () => {
       />
     </Switch>
   );
-}
+};
 
 export default RouteBox;
