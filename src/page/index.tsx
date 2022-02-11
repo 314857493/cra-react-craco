@@ -29,7 +29,8 @@ const Index = () => {
       <div
         onClick={() => {
           objRef.current += 1;
-          console.log(objRef); // ref会同步改变 但不会引起视图的变化 只会改变其值
+          // ref会同步改变 但不会引起视图的变化 只会改变其值
+          // 当有state变化时，ref在视图中会跟随state的变化而被重新渲染
         }}
       >
         {objRef.current}
@@ -37,7 +38,6 @@ const Index = () => {
       <div
         onClick={() => {
           setLocalCounter(localCounter + 1);
-          // console.log(objRef) // ref会同步改变 但不会引起视图的变化 只会改变其值
         }}
       >
         {localCounter}
