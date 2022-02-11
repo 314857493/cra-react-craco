@@ -23,7 +23,6 @@ _axios.interceptors.response.use(
     return response.data;
   },
   (error) => {
-    console.log(error);
     const { status, config } = error.response;
     if (config.url !== "/cms/system/login") {
       if (status === 401) {
@@ -31,8 +30,6 @@ _axios.interceptors.response.use(
         history.push("/login");
       } else {
         message.error(JSON.stringify(error.response.data || error.message));
-        // Message.error(error.response.data);
-        console.log(error.response.data);
       }
     }
     if (status === 400) {

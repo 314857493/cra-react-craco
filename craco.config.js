@@ -42,7 +42,7 @@ module.exports = {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-    configure: (webpackConfig, { env, paths }) => {
+    configure: (webpackConfig, { env }) => {
       const analyzerMode = process.env.REACT_APP_INTERACTIVE_ANALYZE
         ? "server"
         : "json";
@@ -76,7 +76,7 @@ module.exports = {
         Object.assign({ ...webpackConfig }, assignConfig),
         mergeConfig
       );
-      return process.env.NODE_ENV === "production" ? config : webpackConfig;
+      return env === "production" ? config : webpackConfig;
     },
   },
 };

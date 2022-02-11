@@ -4,7 +4,7 @@ import styles from "./index.module.less";
 import { Menu } from "antd";
 import routes from "@/Router/mainRoutes";
 import { useSelector } from "react-redux";
-import type { MyRoute } from "@/Router";
+import type { MyRoute } from "@/Router/types";
 import type { RootState } from "@/store";
 
 const Sider = () => {
