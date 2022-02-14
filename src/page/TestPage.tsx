@@ -12,7 +12,7 @@ import type { RootState } from "@/store";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import _axios from "@/utils/axios";
 
-const TestPage = () => {
+const TestPage: React.FunctionComponent = () => {
   const history = useHistory();
   const count = useSelector((state: RootState) => state.counter.value);
   const dispatch = useDispatch();
@@ -58,5 +58,4 @@ const TestPage = () => {
     </>
   );
 };
-
 export default TestPage;

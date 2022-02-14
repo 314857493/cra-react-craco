@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import type { MyRoute } from "@/Router/types";
 import type { RootState } from "@/store";
 
-const Sider = () => {
+const Sider: React.FunctionComponent = () => {
   const auth = useSelector((state: RootState) => state.user.authority);
   const location = useLocation();
   const match = useRouteMatch();

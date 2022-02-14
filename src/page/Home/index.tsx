@@ -1,10 +1,9 @@
 import React from "react";
+import { useHistory, withRouter } from "react-router-dom";
 import style from "./index.module.less";
 import { Button } from "antd";
-import { useHistory } from "react-router-dom";
-import { withRouter } from "react-router";
 
-const index = withRouter(() => {
+const Index: React.FunctionComponent = () => {
   const history = useHistory();
   return (
     <div className={style.main}>
@@ -18,6 +17,6 @@ const index = withRouter(() => {
       </Button>
     </div>
   );
-});
+};
 
-export default index;
+export default withRouter(Index);

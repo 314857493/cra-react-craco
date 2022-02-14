@@ -1,11 +1,6 @@
 export interface MyRoute {
   path: string;
-  Component?:
-    | JSX.Element
-    | JSX.IntrinsicElements
-    | React.ReactNode
-    | React.FC
-    | any;
+  Component?: React.FunctionComponent;
   title: string;
   name: string;
   requireAuth?: boolean;

@@ -1,11 +1,11 @@
 import React from "react";
-import { Route, Switch, useRouteMatch } from "react-router-dom";
+import { Route, Switch, useRouteMatch, withRouter } from "react-router-dom";
 import routes from "./mainRoutes";
 import Layout from "@/Layout";
 import Sider from "@/page/Main/Sider";
 import type { MyRoute } from "./types";
 
-const MainRoute = () => {
+const MainRoute: React.FunctionComponent = () => {
   const match = useRouteMatch();
   const filteRoute = (route: MyRoute): JSX.Element | JSX.Element[] => {
     const { Component } = route;
@@ -19,6 +19,7 @@ const MainRoute = () => {
         exact
         render={(props) => {
           document.title = route.title;
+          // @ts-ignore
           return <Component {...props} />;
         }}
       />
@@ -34,4 +35,4 @@ const MainRoute = () => {
   );
 };
 
-export default MainRoute;
+export default withRouter(MainRoute);

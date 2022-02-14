@@ -1,7 +1,7 @@
 import React from "react";
-import { withRouter } from "react-router";
+import { withRouter } from "react-router-dom";
 
-const NoMatch = withRouter(() => {
+const NoMatch: React.FunctionComponent = () => {
   return (
     <div
       style={{
@@ -14,6 +14,6 @@ const NoMatch = withRouter(() => {
       <h1>页面404啦</h1>
     </div>
   );
-});
+};
 
-export default NoMatch;
+export default withRouter(NoMatch);

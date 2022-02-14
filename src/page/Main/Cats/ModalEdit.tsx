@@ -11,7 +11,12 @@ interface CatsModalProps {
   rowData: CatSchema;
 }
 
-const ModalEdit = ({ show, handleShow, onSubmit, rowData }: CatsModalProps) => {
+const ModalEdit: React.FunctionComponent<CatsModalProps> = ({
+  show,
+  handleShow,
+  onSubmit,
+  rowData,
+}: CatsModalProps) => {
   const [form] = Form.useForm();
   const handleOk = () => {
     onSubmit({ ...form.getFieldsValue(), id: rowData.id });

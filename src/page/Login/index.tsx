@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Form, Input, Button, message } from "antd";
 import { createHashHistory } from "history";
+import { withRouter } from "react-router-dom";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import _axios from "@/utils/axios";
 import styles from "./index.module.less";
 import { useDispatch } from "react-redux";
 import { setUserInfo } from "@/store/slice/userSlice";
-import { withRouter } from "react-router";
 
-const index = withRouter(() => {
+const Index: React.FunctionComponent = () => {
   const [userNmae, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const history = createHashHistory();
@@ -64,6 +64,6 @@ const index = withRouter(() => {
       </div>
     </div>
   );
-});
+};
 
-export default index;
+export default withRouter(Index);
