@@ -10,7 +10,6 @@ import type { RootState } from "@/store";
 const Sider: React.FunctionComponent = () => {
   const auth = useSelector((state: RootState) => state.user.authority);
   const location = useLocation();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [selected, setSelected] = useState(location.pathname);
   const [openKeys, setOpenKeys] = useState([location.pathname.split("/")[2]]);
   const handleOpenKeys = ({ key }: { key: string }) => {
@@ -28,7 +27,6 @@ const Sider: React.FunctionComponent = () => {
   };
   const filteMenu = (routes: MyRoute[]): React.ReactNode => {
     const menuRender = (menu: MyRoute) => {
-      console.log(menu.path, location.pathname.split("/")[2]);
       if ((menu as RouteWithChild).children) {
         return (
           <Menu.SubMenu

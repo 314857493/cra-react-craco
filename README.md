@@ -14,7 +14,7 @@
 
 ## 使用技术栈
 
-vite+react+redux+react-router(v5)+ts+antd+ahooks
+vite+react+redux+react-router(v6)+ts+antd+ahooks
 
 ## 模板后端服务
 
