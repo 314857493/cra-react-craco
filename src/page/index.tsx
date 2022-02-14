@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import _axios from "@/utils/axios";
 import dayjs from "dayjs";
@@ -8,12 +8,12 @@ import { useStore } from "react-redux";
 const Index: React.FunctionComponent = () => {
   const nowTime = dayjs(new Date()).format("YYYY/MM/DD HH:mm:ss");
   const store = useStore();
-  const history = useHistory();
+  const navigate = useNavigate();
   const reduxState = store.getState();
   const [localCounter, setLocalCounter] = useState(1);
   const objRef = useRef(1);
   const goTest = () => {
-    history.push("/main/TestPage");
+    navigate("/main/TestPage");
   };
   return (
     <>

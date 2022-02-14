@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Form, Input, Button, message } from "antd";
 import { createHashHistory } from "history";
-import { withRouter } from "react-router-dom";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import _axios from "@/utils/axios";
 import styles from "./index.module.less";
@@ -66,4 +65,4 @@ const Index: React.FunctionComponent = () => {
   );
 };
 
-export default withRouter(Index);
+export default Index;

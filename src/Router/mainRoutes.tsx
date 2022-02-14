@@ -1,22 +1,28 @@
-import Index from "@/page/index";
-import Cats from "@/page/Main/Cats";
-import TestPage from "@/page/TestPage";
+import React from "react";
+import { lazy } from "react";
 import type { MyRoute } from "./types";
 
 const routes: MyRoute[] = [
   {
     path: "overview",
-    Component: Index,
+    component: lazy(() => import("@/page/index")),
     title: "概览",
-    name: "index",
+    name: "overview",
     requireAuth: false,
   },
   {
-    path: "TestPage",
-    Component: TestPage,
+    path: "testPage",
+    component: lazy(() => import("@/page/TestPage")),
     title: "测试页",
     name: "testPage",
     requireAuth: false,
+  },
+  {
+    path: "666",
+    title: "666",
+    name: "666",
+    component: () => <>123</>,
+    requireAuth: true,
   },
   {
     path: "cats",
@@ -25,9 +31,10 @@ const routes: MyRoute[] = [
     children: [
       {
         path: "cats/catsList",
-        Component: Cats,
+        component: lazy(() => import("@/page/Main/Cats")),
         title: "猫猫列表",
         name: "cats.catsList",
+        requireAuth: true,
       },
     ],
   },

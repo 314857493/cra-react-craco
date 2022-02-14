@@ -1,38 +1,37 @@
-import React from "react";
-import { Route, Switch, useRouteMatch, withRouter } from "react-router-dom";
+import React, { Suspense } from "react";
+import { Routes, Route } from "react-router-dom";
 import routes from "./mainRoutes";
-import Layout from "@/Layout";
+import type { MyRoute, RouteWithChild, RouteWithComponent } from "./types";
 import Sider from "@/page/Main/Sider";
-import type { MyRoute } from "./types";
 
-const MainRoute: React.FunctionComponent = () => {
-  const match = useRouteMatch();
-  const filteRoute = (route: MyRoute): JSX.Element | JSX.Element[] => {
-    const { Component } = route;
-    if (route.children) {
-      return route.children.map(filteRoute) as JSX.Element | JSX.Element[];
+const generateRouter: any = (routers: MyRoute[]) => {
+  return routers.map((item) => {
+    if ((item as RouteWithChild).children) {
+      return generateRouter((item as RouteWithChild).children);
     }
+    const Component = (item as RouteWithComponent).component;
     return (
       <Route
-        key={route.path}
-        path={`${match.path}/${route.path}`}
-        exact
-        render={(props) => {
-          document.title = route.title;
-          // @ts-ignore
-          return <Component {...props} />;
-        }}
+        path={item.path}
+        key={item.name}
+        element={
+          <Suspense fallback={<div>加载中...</div>}>
+            <Component />
+          </Suspense>
+        }
       />
     );
-  };
+  });
+};
+const MainRoute = () => {
   return (
-    <Layout>
+    <>
       <Sider />
       <div style={{ flex: 1 }}>
-        <Switch>{routes.map(filteRoute)}</Switch>
+        <Routes>{generateRouter(routes)}</Routes>
       </div>
-    </Layout>
+    </>
   );
 };
 
-export default withRouter(MainRoute);
+export default MainRoute;

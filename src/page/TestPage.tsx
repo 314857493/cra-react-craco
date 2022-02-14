@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
   decrement,
@@ -13,7 +13,7 @@ import type { RootState } from "@/store";
 import _axios from "@/utils/axios";
 
 const TestPage: React.FunctionComponent = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const count = useSelector((state: RootState) => state.counter.value);
   const dispatch = useDispatch();
   const { run: input2Increase } = useDebounceFn(
@@ -23,7 +23,7 @@ const TestPage: React.FunctionComponent = () => {
     { wait: 1000 }
   );
   const goBack = () => {
-    history.go(-1);
+    navigate(-1);
   };
 
   const doubleCount = useMemo(() => {

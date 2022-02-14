@@ -1,8 +1,18 @@
-export interface MyRoute {
+import type React from "react";
+export interface RouteWithChild {
   path: string;
-  Component?: React.FunctionComponent;
   title: string;
   name: string;
   requireAuth?: boolean;
-  children?: MyRoute[];
+  children: MyRoute[];
 }
+
+export interface RouteWithComponent {
+  path: string;
+  component: React.FunctionComponent;
+  title: string;
+  name: string;
+  requireAuth?: boolean;
+}
+
+export type MyRoute = RouteWithComponent | RouteWithChild;

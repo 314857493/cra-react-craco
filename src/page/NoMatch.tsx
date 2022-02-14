@@ -1,5 +1,4 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
 
 const NoMatch: React.FunctionComponent = () => {
   return (
@@ -16,4 +15,4 @@ const NoMatch: React.FunctionComponent = () => {
   );
 };
 
-export default withRouter(NoMatch);
+export default NoMatch;
