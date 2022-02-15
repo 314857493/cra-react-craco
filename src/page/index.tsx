@@ -13,7 +13,7 @@ const Index: React.FunctionComponent = () => {
   const [localCounter, setLocalCounter] = useState(1);
   const objRef = useRef(1);
   const goTest = () => {
-    navigate("/main/TestPage");
+    navigate("/main/testPage");
   };
   return (
     <>

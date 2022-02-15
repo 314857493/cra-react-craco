@@ -22,9 +22,7 @@ const RouteBox = () => {
               </Suspense>
             </Layout>
           }
-        >
-          {/* <Route /> */}
-        </Route>
+        />
       </Route>
       <Route path="*" element={<NoMatch />} />
     </Routes>
