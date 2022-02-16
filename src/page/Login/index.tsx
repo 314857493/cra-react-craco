@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 import { Form, Input, Button, message } from "antd";
-import { createHashHistory } from "history";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import _axios from "@/utils/axios";
 import styles from "./index.module.less";
@@ -10,10 +10,10 @@ import { setUserInfo } from "@/store/slice/userSlice";
 const Index: React.FunctionComponent = () => {
   const [userNmae, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const history = createHashHistory();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const login = () => {
-    console.log(password, userNmae);
+    console.log(userNmae, password);
     new Promise((resolve) => {
       resolve({ code: 1, data: { userNmae: "jxd", userRole: 0, id: 1 } });
     })
@@ -26,7 +26,7 @@ const Index: React.FunctionComponent = () => {
         if (res.code === 1) {
           dispatch(setUserInfo(res.data));
           message.success("登录成功");
-          history.push("/main/overview");
+          navigate("/main/overview");
         }
       });
   };

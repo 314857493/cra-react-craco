@@ -9,7 +9,7 @@ export interface RouteWithChild {
 
 export interface RouteWithComponent {
   path: string;
-  component: React.FunctionComponent;
+  element: React.FunctionComponent;
   title: string;
   name: string;
   requireAuth?: boolean;

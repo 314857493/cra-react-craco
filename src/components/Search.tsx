@@ -60,6 +60,8 @@ const Search = ({
         name="searchForm"
         labelAlign="right"
         {...formLayout}
+        // labelCol={{ span: labelSpan }}
+        // wrapperCol={{ span: wrapperSpan }}
       >
         <div
           style={{

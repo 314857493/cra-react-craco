@@ -1,18 +1,18 @@
 import React from "react";
 import { lazy } from "react";
-import type { MyRoute } from "./types";
+import type { MyRoute } from "../types";
 
 const routes: MyRoute[] = [
   {
     path: "overview",
-    component: lazy(() => import("@/page/index")),
+    element: lazy(() => import("@/page/index")),
     title: "概览",
     name: "overview",
     requireAuth: false,
   },
   {
     path: "testPage",
-    component: lazy(() => import("@/page/TestPage")),
+    element: lazy(() => import("@/page/TestPage")),
     title: "测试页",
     name: "testPage",
     requireAuth: false,
@@ -21,7 +21,7 @@ const routes: MyRoute[] = [
     path: "666",
     title: "666",
     name: "666",
-    component: () => <>123</>,
+    element: () => <>123</>,
     requireAuth: true,
   },
   {
@@ -31,7 +31,7 @@ const routes: MyRoute[] = [
     children: [
       {
         path: "cats/catsList",
-        component: lazy(() => import("@/page/Main/Cats")),
+        element: lazy(() => import("@/page/Main/Cats")),
         title: "猫猫列表",
         name: "cats.catsList",
         requireAuth: true,

@@ -3,7 +3,7 @@ export function goLogin() {
     const returnUrl = encodeURIComponent(
       window.location.href.replace(window.location.origin, "").replace("/#", "")
     );
-    window.location.href = `/#/login?returnUrl=${returnUrl}`;
+    window.location.href = `/login?returnUrl=${returnUrl}`;
   }
 }
 /**

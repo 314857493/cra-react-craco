@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./index.module.less";
 import { Menu } from "antd";
-import mainRoutes from "@/Router/mainRoutes";
+import mainRoutes from "@/Router/main/mainRoutes";
 import { useSelector } from "react-redux";
 import type { MyRoute, RouteWithChild } from "@/Router/types";
 import type { RootState } from "@/store";

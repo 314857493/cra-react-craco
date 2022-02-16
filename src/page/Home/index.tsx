@@ -4,13 +4,13 @@ import style from "./index.module.less";
 import { Button } from "antd";
 
 const Index: React.FunctionComponent = () => {
-  const navigation = useNavigate();
+  const navigate = useNavigate();
   return (
     <div className={style.main}>
       <div>首页</div>
       <Button
         onClick={() => {
-          navigation("main/overview");
+          navigate("/main/overview");
         }}
       >
         去概览
