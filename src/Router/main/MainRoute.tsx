@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import routes from "./mainRoutes";
 import type { MyRoute, RouteWithChild, RouteWithComponent } from "../types";
@@ -16,7 +16,11 @@ const generateRouter: any = (routers: MyRoute[]) => {
       <Route
         path={item.path}
         key={item.name}
-        element={<RouterWrapper element={<Element />} title={item.title} />}
+        element={
+          <Suspense fallback={<div>Loading...</div>}>
+            <RouterWrapper element={<Element />} title={item.title} />
+          </Suspense>
+        }
       />
     );
   });
