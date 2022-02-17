@@ -5,7 +5,7 @@ import type { MyRoute } from "../types";
 const routes: MyRoute[] = [
   {
     path: "overview",
-    element: lazy(() => import("@/page/index")),
+    element: lazy(() => import("@/page/Main/Overview/index")),
     title: "概览",
     name: "overview",
     requireAuth: false,

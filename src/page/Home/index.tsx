@@ -1,7 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import style from "./index.module.less";
 import { Button } from "antd";
+import { useNavigate } from "react-router-dom";
 
 const Index: React.FunctionComponent = () => {
   const navigate = useNavigate();
